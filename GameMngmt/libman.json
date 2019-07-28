@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "datatable@2.0.1",
+      "destination": "Scripts/datatable/",
+      "files": [
+        "js/datatable.min.js",
+        "js/datatable.js",
+        "css/datatable.css",
+        "css/datatable.min.css",
+        "css/datatable-bootstrap.min.css",
+        "css/datatable-bootstrap.css"
+      ]
+    },
+    {
+      "library": "datatables@1.10.19",
+      "destination": "Scripts/datatables/",
+      "files": [
+        "js/jquery.dataTables.min.js",
+        "css/dataTables.bootstrap.css",
+        "css/dataTables.bootstrap.min.css"
+      ]
+    }
+  ]
+}

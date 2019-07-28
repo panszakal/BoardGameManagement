@@ -1,0 +1,81 @@
+﻿@model GameMngmt.Models.GameViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Game Details</title>
+</head>
+<body>
+    <div>
+        <h4>Game</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.GameName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GameName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MinimumNumberOfPlayers)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MinimumNumberOfPlayers)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MaximumNumberOfPlayers)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MaximumNumberOfPlayers)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.RecommendedAge)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.RecommendedAge)
+            </dd>
+    
+        </dl>
+    </div>
+    <div class="table-responsive">
+
+        @if (Model.GamesHistory.Count() > 0)
+        {
+        <table class="table table-striped table-sm" id="gamehistorytable" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="th-sm sorting" scope="col">Game date</th>
+                    <th class="th-sm sorting" scope="col">Game time</th>
+                    <th class="th-sm sorting" scope="col">Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var game in Model.GamesHistory)
+                {
+                <tr>
+                    <td>@game.GameDateTime.ToShortDateString()</td>
+                    <td>@game.GameDateTime.ToShortTimeString()</td>
+                    <td>@game.Source</td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+        }
+
+    </div>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")*@
+    </p>
+</body>
+</html>
